@@ -1,0 +1,36 @@
+import React from 'react'
+import { useEffect } from 'react';
+const Productos = () => {
+
+ const arreglo = [{nombre:'alejandro', id:1},{nombre:'alejandro', id:2},{nombre:'alejandro', id:1}];
+ 
+
+
+const objetoFiltro = {};
+const datos = arreglo.filter(function(objeto) {
+  let  exists = !objetoFiltro[objeto.id];
+  objetoFiltro[objeto.id] = true;
+  
+    return exists;
+ 
+});
+
+  return (
+  <>
+  { 
+    datos.map((clase) => 
+    <div>
+      <div>{clase.id}</div>
+      <div>{clase.nombre}</div>
+      </div>
+    )
+    }
+  
+  
+  
+  </>
+   
+  )
+}
+
+export default Productos
